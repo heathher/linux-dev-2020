@@ -31,7 +31,7 @@ int main() {
     keypad(winB, TRUE);
     scrollok(winO, TRUE);
     wmove(winO, 1, 0);
-    char inA[MAXSTR], inB[MAXSTR], res[MAXSTR];
+    char inA[MAXSTR], inB[MAXSTR];
     do {
         werase(winA);
         box(winA, 0, 0);
@@ -43,7 +43,6 @@ int main() {
         subject = (PCRE2_SPTR)inB;
         subject_length = (PCRE2_SIZE)strlen((char *)subject);
 
-        re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, PCRE2_UCP, &errnum, &erroffs, NULL);
         #ifdef WITHOUT_UTF
             re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, 0, &errnum, &erroffs, NULL);
         #else
@@ -53,7 +52,7 @@ int main() {
         if (re == NULL) {
             PCRE2_UCHAR buffer[256];
             pcre2_get_error_message(errnum, buffer, sizeof(buffer));
-            printf(res, "PCRE2 compilation failed at offset %d: %s\n", (int)erroffs, buffer);
+            wprintw(winO, "PCRE2 compilation failed at offset %d: %s\n", (int)erroffs, buffer);
             return 1;
         }
 
@@ -63,10 +62,10 @@ int main() {
         if (rc < 0) {
             switch(rc) {
             case PCRE2_ERROR_NOMATCH:
-                printf(res, "No match\n");
+                wprintw(winO, "No match\n");
                 break;
             default:
-                printf(res, "Matching error %d\n", rc);
+                wprintw(winO, "Matching error %d\n", rc);
                 break;
             }
             pcre2_match_data_free(match_data);   
@@ -77,7 +76,7 @@ int main() {
         ovector = pcre2_get_ovector_pointer(match_data);
 
         for (i = 0; i < rc; i++)
-            sprintf(res, "%2ld: %.*s\n", ovector[2*i], (int)(ovector[2*i+1] - ovector[2*i]),subject + ovector[2*i]);
+            wprintw(winO, "  %2ld: %.*s\n", ovector[2*i], (int)(ovector[2*i+1] - ovector[2*i]), subject + ovector[2*i]);
 
         pcre2_match_data_free(match_data);
         pcre2_code_free(re);
