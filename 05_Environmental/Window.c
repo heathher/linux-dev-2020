@@ -77,15 +77,13 @@ int main() {
         ovector = pcre2_get_ovector_pointer(match_data);
 
         for (i = 0; i < rc; i++)
-            sprintf(res, "%2ld: %.*s\n", ovector[2*i], 
-                    (int)(ovector[2*i+1] - ovector[2*i]),
-                    subject + ovector[2*i]);
+            sprintf(res, "%2ld: %.*s\n", ovector[2*i], (int)(ovector[2*i+1] - ovector[2*i]),subject + ovector[2*i]);
 
         pcre2_match_data_free(match_data);
         pcre2_code_free(re);
         box(winO, 0, 0);
         wrefresh(winO);
-    } while (*pattern);
+    } while (*inA);
 
     endwin();
 
