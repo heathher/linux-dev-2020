@@ -1,7 +1,7 @@
 all: wrapper.so
 
 wrapper.so: wrapper.c
-	gcc -shared -fPIC wrapper.c -o wrapper.so 
+	gcc -shared -fPIC wrapper.c -o wrapper.so -ldl
 
 test: wrapper.so
 	touch file FIX_file
