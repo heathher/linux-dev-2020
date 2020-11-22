@@ -1,0 +1,77 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: main 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-15 17:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME\n"
+"Language-Team: LANGUAGE\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.c:37
+#, c-format
+msgid "Number must be in range from 1 to 100\n"
+msgstr ""
+
+#: main.c:59
+#, c-format
+msgid "Roman number must be in range from I to C\n"
+msgstr ""
+
+#: main.c:91
+#, c-format
+msgid "Is your number less or greater than %s?\n"
+msgstr ""
+
+#: main.c:95
+#, c-format
+msgid "Is your number less or greater than %d?\n"
+msgstr ""
+
+#: main.c:100 main.c:102
+msgid "l"
+msgstr ""
+
+#: main.c:100 main.c:103
+msgid "g"
+msgstr ""
+
+#: main.c:100
+#, c-format
+msgid "Answer %s or %s: "
+msgstr ""
+
+#: main.c:130
+msgid ""
+"This program have to guess any number from 1 to 100.\n\"
+"\n"
+"Usage: ./main [OPTION]...\n\"
+"\n"
+"Options:\n\"
+"--help                  display this usage\n\"
+"-r                      on roman mode\n"
+msgstr ""
+
+#: main.c:148
+#, c-format
+msgid "Write a number from I to C\n"
+msgstr ""
+
+#: main.c:153
+#, c-format
+msgid "Write a number from 1 to 100\n"
+msgstr ""
+
+#: main.c:160
+#, c-format
+msgid "Your number is %s\n"
+msgstr ""
+
+#: main.c:164
+#, c-format
+msgid "Your number is %d\n"
+msgstr ""
