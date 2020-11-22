@@ -1,5 +1,7 @@
 /** @file main.c
  * Main file
+ * 
+ * Guess a number from 1 to 100
  */
 
 #include <stdlib.h>
@@ -128,13 +130,13 @@ int main(int argc, char *argv[])
 
     if (argc > 1 && !strcmp(argv[1], "--help")) {
     printf(_("\
-        This program have to guess any number from 1 to 100.\n\
-        \n\
-        Usage: ./main [OPTION]...\n\
-        \n\
-        Options:\n\
-        --help                  display this usage\n\
-        -r                      on roman mode\n"));
+This program have to guess any number from 1 to 100.\n\
+\n\
+Usage: ./main [OPTION]...\n\
+\n\
+Options:\n\
+--help                  display this usage\n\
+-r                      on roman mode\n"));
         return 0;
     }
 
