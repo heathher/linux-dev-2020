@@ -6,7 +6,6 @@
 #include <stdio.h>
 
 #define _(STRING) gettext(STRING)
-#define LOCALE_PATH "."
 
 int binarySearch(int l, int r, int x) 
 {

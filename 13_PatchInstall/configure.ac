@@ -1,5 +1,5 @@
 AC_PREREQ([2.69])
-AC_INIT([main], [1.0.0], [nikolaevaytalina@gmail.com])
+AC_INIT([main], [1.0.0], [nikolaevaytalina@gmail.com], [aguess])
 AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_SRCDIR([main.c])
 AC_CONFIG_HEADERS([config.h])

@@ -1,5 +1,7 @@
 bin_PROGRAMS=main
 pkgdata_DATA=ru/LC_MESSAGES/main.mo
+AM_CPPFLAGS = -D LOCALEDIR='"$(localedir)"'
+pkgdatadir = $(localedir)/ru/LC_MESSAGES
 
 ru/LC_MESSAGES/main.mo: ru.po
 	mkdir -p `dirname $@`
